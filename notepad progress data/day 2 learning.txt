@@ -1,0 +1,13 @@
+day 2 learning
+
+❌ But you must NOT use while loops inside:
+
+sysCall_init()
+
+sysCall_actuation()
+
+sysCall_sensing()
+
+sysCall_cleanup()
+
+because they freeze the CoppeliaSim simulation.

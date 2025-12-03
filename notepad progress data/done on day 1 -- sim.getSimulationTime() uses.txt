@@ -1,0 +1,62 @@
+import time
+def sysCall_init():
+    sim = require('sim')
+
+    self.leftMotor = sim.getObject("../front_left_wheel")
+    self.rightMotor = sim.getObject("../front_right_wheel")
+    self.startTime = sim.getSimulationTime()
+
+
+    print("init")
+
+
+def sysCall_actuation():
+    
+    t=sim.getSimulationTime()-self.startTime
+    
+    t=t%20
+    
+    
+    if t<5:
+    
+        sim.setJointTargetVelocity(self.leftMotor, 6)
+        sim.setJointTargetVelocity(self.rightMotor, -6)
+
+        
+        
+    elif t<10:
+            
+        sim.setJointTargetVelocity(self.leftMotor, 6)
+        sim.setJointTargetVelocity(self.rightMotor, 6)
+        
+    elif t<15:
+            
+        sim.setJointTargetVelocity(self.leftMotor, 6)
+        sim.setJointTargetVelocity(self.rightMotor, -6)
+    
+    else:
+        sim.setJointTargetVelocity(self.leftMotor, 6)
+        sim.setJointTargetVelocity(self.rightMotor, 6)
+       
+
+    
+   
+    
+    
+    
+
+def sysCall_sensing():
+    pass
+
+
+def sysCall_cleanup():
+    
+    #sim.setJointTargetVelocity(self.leftMotor, 0)
+   # sim.setJointTargetVelocity(self.rightMotor, 0)
+    print("cleanup")
+
+
+
+
+#learning -> sim.getSimulationTime()
+#extract real time of the system 
